@@ -1,0 +1,18 @@
+{
+  "name": "@nexopessoal/api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "test": "node --import tsx --test src/*.test.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "latest",
+    "@fastify/multipart": "^10.1.6",
+    "fastify": "latest",
+    "mysql2": "^3.24.6",
+    "zod": "latest"
+  }
+}

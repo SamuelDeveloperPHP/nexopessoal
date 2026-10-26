@@ -1,0 +1,29 @@
+{
+  "name": "nexopessoal",
+  "private": true,
+  "version": "0.1.0",
+  "description": "SaaS multiempresa para documentos profissionais de trabalhadores",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.base.json",
+    "test": "npm run test --workspace @nexopessoal/api && npm run test --workspace @nexopessoal/admin",
+    "production:check": "node --import tsx apps/api/src/config-check.ts",
+    "mysql:check": "node --import tsx apps/api/src/mysql-check.ts",
+    "admin:dev": "npm run dev --workspace @nexopessoal/admin",
+    "admin:build": "npm run build --workspace @nexopessoal/admin",
+    "employee:dev": "npm run dev --workspace @nexopessoal/employee",
+    "employee:build": "npm run build --workspace @nexopessoal/employee",
+    "employee:test": "npm run test --workspace @nexopessoal/employee"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}
